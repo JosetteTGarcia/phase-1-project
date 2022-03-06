@@ -1,7 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head> 
-    <title>Phase 1 Project Title</title>
-  </head>
-  <body></body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+          
+  <style>
+    .item1 { grid-area: header; }
+    .item2 { grid-area: form; }
+    .item3 { grid-area: first; }
+    .item4 { grid-area: second; }
+    
+    
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        'header header header header header header'
+        'form first first first first first'
+        'form second second second second second';
+      gap: 10px;
+      background-color: #ffffff;
+      padding: 10px;
+    }
+    
+    .grid-container > div {
+      background-color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 20px;
+    }
+    </style>
+    <title>Habit Tracker: Reach Your Goals!</title> 
+</head>
+<body>
+  <nav class="deep-purple">
+    <div class="nav-wrapper container" >
+      <a href="#" class="brand-logo grey-text text-darken-4" >Habit Tracker: Reach Your Goals!</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html" class="grey-text text-darken-4">Habit Tips</a></li>
+        <li><a href="badges.html" class="grey-text text-darken-4">Set Up Habits</a></li>
+        <li><a href="collapsible.html" class="grey-text text-darken-4">Habit History</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container"> <!-- This is for the Welcome Heading-->
+    <div id="main"></div>
+  </div>
+
+
+<div class="grid-container">
+  <div class="item1">
+    <p>This is where directions will go </p></div>
+  <div class="item2">
+    <p>This is where I will have my form to add new goals</p>
+  </div>
+  <div class="item3">
+    <p>This is an example of where the tracker would be for goal 1</p>
+  </div>
+  <div class="item4">
+    <p>This is an example of where the tracker would be for goal 2</p>
+  </div>
+</div>
+
+</div>
+  <script src="javascripts/index.js"></script>
+</body>
 </html>
+
