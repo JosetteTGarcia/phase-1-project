@@ -9,22 +9,38 @@ document
 const mainDiv = () => document.getElementById("main");
 const homePageLink = () => document.getElementById("home-page-link");
 const habitTipsLink = () => document.getElementById("habit-tips")
+const checkboxContainer = document.createDocumentFragment();
+
 /** Templates */
 
-const homePageTemplate = () => {
+//Home Page
+const homePageTemplate = () => { 
   return `
   <h3 class="center-align">Welcome to the First Step Towards Your Goals!</h3>
   `
 }
 
+//Habits Tips page
 const habitTipsTemplate = () => {
   return `
   <h3 class="center-align">Check out these tips to stay on track!</h3>
   `
 }
 
+// Creates 30 checkboxes when new habit is created
+for (let i = 1; i < 31; i++) {
+  let checkboxes = checkboxContainer.appendChild(document.createElement("div"));
+  checkboxes.style = "display:inline"
+  checkboxes.innerHTML = `
+  <label>
+    <input type="checkbox" />
+    <span> Day ${i}</span> &nbsp;
+  </label>`
+}
 
 /**Events: */
+
+// Form Submission/ Create Object
 function handleFormSubmit(event) {
   //prevent default
   event.preventDefault();
@@ -69,7 +85,12 @@ function handleFormSubmit(event) {
    })
  }
 
+
+
 /** Renders */
+
+
+
 
 function renderNewGoal(goalObject) {
   // step 1. create the outer element using createElement (& assign necessary attributes)
@@ -78,29 +99,32 @@ function renderNewGoal(goalObject) {
 
   // step 2. use innerHTML to create all of its children
   newGoal.innerHTML = `
-  <div class="content">
-    <h4>${goalObject.goalName}</h4>
+  <div class="goal-content">
+    <h6>${goalObject.goalName}</h6>
     <p>
       ${goalObject.reasonWhy}
     </p>
-    <p>${goalObject.dateStarted}</p>
+    <p>
+     Date Started: ${goalObject.dateStarted}
+    </p>
     <p>
           <li>Reward One: ${goalObject.rewardOne}</li>
           <li>Reward One: ${goalObject.rewardTwo}</li>
           <li>Reward One: ${goalObject.rewardThree}</li>
     </p>
   </div>
+
   `;
 
   // step 3. slap it on the DOM!
   document.querySelector("#goal-list").append(newGoal);
+  document.querySelector("#goal-list").appendChild(checkboxContainer);
 }
 
 
 const renderHomePage = () => {
   mainDiv().innerHTML = homePageTemplate();
 }
-
 const renderHabitTipsPage = () => {
   mainDiv().innerHTML = habitTipsTemplate();
 }
