@@ -1,6 +1,7 @@
 
 
 /** Globals */
+const baseUrl = 'http://localhost:3000';
 document
   .querySelector("#goal-add-form")
   .addEventListener("submit", handleFormSubmit);
@@ -17,6 +18,7 @@ const checkboxContainer = document.createDocumentFragment();
 const homePageTemplate = () => { 
   return `
   <h3 class="center-align">Welcome to the First Step Towards Your Goals!</h3>
+  
   `
 }
 
@@ -28,19 +30,16 @@ const habitTipsTemplate = () => {
 }
 
 // Creates 30 checkboxes when new habit is created
-for (let i = 1; i < 31; i++) {
-  let checkboxes = checkboxContainer.appendChild(document.createElement("div"));
-  checkboxes.style = "display:inline"
-  checkboxes.innerHTML = `
-  <label>
-    <input type="checkbox" />
-    <span> Day ${i}</span> &nbsp;
-  </label>`
-}
+
+
+
+
 
 /**Events: */
 
 // Form Submission/ Create Object
+
+
 function handleFormSubmit(event) {
   //prevent default
   event.preventDefault();
@@ -53,17 +52,25 @@ function handleFormSubmit(event) {
     rewardTwo: event.target.reward_two.value,
     rewardThree: event.target.reward_three.value,
     dateStarted: event.target.date_started.value,
+    
   };
-
- 
 
   // TODO: create animal on the server
 
-  // Step 2: slap it on the DOM
-  renderNewGoal(goalObject);
+ // Step 2: slap it on the DOM
+renderNewGoal(goalObject);
 
-  // (optional) Step 3: clear the input fields
-  event.target.reset();
+//add to  db.json?
+saveGoalToServer(goalObject)
+
+// (optional) Step 3: clear the input fields
+event.target.reset();
+}
+
+
+//Initialize
+function initialize(){
+  retrieveAllGoals()
 }
 
 
@@ -92,6 +99,7 @@ function handleFormSubmit(event) {
 
 
 
+
 function renderNewGoal(goalObject) {
   // step 1. create the outer element using createElement (& assign necessary attributes)
   const newGoal = document.createElement("li");
@@ -112,13 +120,25 @@ function renderNewGoal(goalObject) {
           <li>Reward One: ${goalObject.rewardTwo}</li>
           <li>Reward One: ${goalObject.rewardThree}</li>
     </p>
+    
   </div>
 
-  `;
+  `
+  for (let i = 1; i < 31; i++) {
+    let checkboxes = checkboxContainer.appendChild(document.createElement("div"));
+    checkboxes.style = "display:inline"
+    checkboxes.className = "item4"
+    checkboxes.innerHTML = `
+    <label>
+      <input type="checkbox" />
+      <span> Day ${i}</span> &nbsp;
+    </label>`
+  } ;
+
 
   // step 3. slap it on the DOM!
   document.querySelector("#goal-list").append(newGoal);
-  document.querySelector("#goal-list").appendChild(checkboxContainer);
+  document.querySelector(".goal-tracking-section").appendChild(checkboxContainer);
 }
 
 
@@ -129,10 +149,30 @@ const renderHabitTipsPage = () => {
   mainDiv().innerHTML = habitTipsTemplate();
 }
 
+//Fetch Goals on reload
+function retrieveAllGoals(){
+  fetch('http://localhost:3000/goals')
+  .then(res=> res.json())
+  .then(goals => goals.forEach(goal => renderNewGoal(goal)))
+}
+
+//POST goals to db json
+function saveGoalToServer(goalObject){
+  fetch(`http://localhost:3000/goals`,{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body:JSON.stringify(goalObject),
+  })
+  .then(res => res.json())
+  .then(goal => console.log(goal))
+}
 
 
 /** WHEN THE DOM LOADS */
  document.addEventListener('DOMContentLoaded', () => {
+  initialize();
   homePageLinkEvent();
   habitTipsLinkEvent();
  })
