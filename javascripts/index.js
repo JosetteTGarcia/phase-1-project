@@ -12,7 +12,7 @@ document
 const mainDiv = () => document.getElementById("main");
 const homePageLink = () => document.getElementById("home-page-link");
 const habitTipsLink = () => document.getElementById("habit-tips")
-// const checkboxContainer = document.createDocumentFragment();
+const checkboxContainer = document.createDocumentFragment();
 // const goalsArray = "goals"
 
 
@@ -32,12 +32,6 @@ const habitTipsTemplate = () => {
   <h3 class="center-align">Check out these tips to stay on track!</h3>
   `
 }
-
-// Creates 30 checkboxes when new habit is created
-
-
-
-
 
 /**Events: */
 
@@ -63,29 +57,9 @@ function handleFormSubmit(event) {
     rewardTwo: event.target.reward_two.value,
     rewardThree: event.target.reward_three.value,
     dateStarted: event.target.date_started.value,
-    checks: function () {
-      for (let i = 1; i < 31; i++) {
-        //let checkboxes = checkboxContainer.appendChild(document.createElement("div"));
-        const checkboxes = document.createElement("li")
-        checkboxes.style = "display:inline"
-        checkboxes.innerHTML = `
-        <label>
-          <input type="checkbox" id = "checkbox" />
-          <span> Day ${i}</span> &nbsp;
-        </label>` ; 
-        // array1.push(i);
-        // finalCheckboxArray.push(array1.slice(0));
-        // goalObject['checks'].push(finalCheckboxArray)
-        // console.log(`${finalCheckboxArray}`)
-      };
-      
-    }
   }
-
-      // array1.push(i);
-      // finalCheckboxArray.push(array1.slice(0));
-      // goalObject['checks'].push(finalCheckboxArray)
-      // console.log(`${finalCheckboxArray}`)
+      
+  
 
   // TODO: create animal on the server
 
@@ -98,28 +72,6 @@ saveGoalToServer(goalObject)
 // (optional) Step 3: clear the input fields
 event.target.reset();
 }
-
-
-
-
-  
-
-
-
-// function handleGoalListDelete(event){
-//   if (event.target.dataset.action === "delete") {
-//     // Delete Animal
-//     const button = event.target;
-
-//     // traverse the DOM to find elements we care about, relative to the button
-//     const newGoal = button.closest(".newGoal");
-//     const connectedboxes = button.closest("checkboxContainer")
-
-//     // remove the animal card
-//     newGoal.remove();
-// }
-// }
-
 
 
 
@@ -157,7 +109,6 @@ function renderNewGoal(goalObject) {
   newGoal.className = "newGoal";
   newGoal.id = goalObject.id
  
-
   // step 2. use innerHTML to create all of its children
   newGoal.innerHTML = `
   <div class="goal-content">
@@ -173,38 +124,40 @@ function renderNewGoal(goalObject) {
           <li>Reward One: ${goalObject.rewardTwo}</li>
           <li>Reward One: ${goalObject.rewardThree}</li>
     </p>
-    
+    </div>
+  </div>
+  <div id ="checkboxdiv" style = "display:inline" >
+
   </div>
   <div class="buttons">
-    <button class = "delete" id ="delete" data-action="delete">Delete Goal</button>
-  </div>
-  <div class="checkboxes">
-    <li>
-      ${goalObject.checks}
-    </li>
+  <button class = "delete" id ="delete" data-action="delete">Delete Goal</button>
   </div>
   `
   
+  //Event Listener for delete button
   newGoal.querySelector(`#delete`).addEventListener(`click`, () => {
     newGoal.remove()
     deleteGoal(goalObject.id)
   });
 
-  // for (let i = 1; i < 31; i++) {
-  //   let checkboxes = checkboxContainer.appendChild(document.createElement("div"));
-  //   checkboxes.style = "display:inline"
-  //   checkboxes.className = "item4"
-  //   checkboxes.innerHTML = `
-  //   <label>
-  //     <input type="checkbox" id = "checkbox" />
-  //     <span> Day ${i}</span> &nbsp;
-  //   </label>` ; 
-  // };
+  for (let i = 1; i < 31; i++) {  
+    let checkboxes = checkboxContainer.appendChild(document.createElement("li"));
+    checkboxes.style = "display:inline"
+    checkboxes.className = "checkboxes"
+    checkboxes.innerHTML = `
+    <label>
+      <input type="checkbox" id = "checkbox" />
+      <span> Day ${i}</span> &nbsp;
+    </label>
+    ` 
+    ; 
+  };
 
 
   // step 3. slap it on the DOM!
   document.querySelector("#goal-list").append(newGoal);
-  //document.querySelector(".checkboxes").appendChild(checkboxContainer);
+  newGoal.querySelector("#checkboxdiv").appendChild(checkboxContainer);
+
 }
 
 
