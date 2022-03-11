@@ -12,44 +12,10 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  
           
-  <style>
-    .item1 { 
-      grid-area: header;
-      text-align: center; 
-     }
-    .item2 { 
-      grid-area: form;
-      text-align: left;
-      width: 300px;
-    }
-    .item3 { 
-      grid-area: first;
-      text-align: left;  
-    }
-    .item4 { 
-      grid-area: second; 
-      text-align: left; 
-    }
-    
-    
-    .grid-container {
-      display: grid;
-      grid-template-areas:
-        'header header header header header header'
-        'form first first first first first'
-        'form second second second second second';
-      gap: 10px;
-      background-color: #ffffff;
-      padding: 10px;
-    }
-    
-    .grid-container > div {
-      background-color: rgb(255, 255, 255);
-      padding: 20px 0;
-      font-size: 20px;
-    }
-    </style>
+  <link rel="stylesheet" href="./main.css" />
     <title>Habit Tracker: Reach Your Goals!</title> 
 </head>
 <body>
@@ -68,37 +34,36 @@
   </div>
 
   <div class="grid-container" id = "main">
-    <div class="item1">
-      <p>This is where directions will go </p></div>
+   
     <div class="item2">
       <form id="goal-add-form">
-        <label for="goal"> New Goal:</label>
-        <input type="text" id="new-habit" name="new-habit" />
-        <label for="goal"> Your "why": </label>
-        <input type="text" id="reason-why" name="reason-why" />
-        <label for="goal"> Reward One: </label>
-        <input type="text" id="reward-one" name="reward-one" />
-        <label for="goal"> Reward Two: </label>
-        <input type="text" id="reward-two" name="reward-two" />
-        <label for="goal"> Reward Three: </label>
-        <input type="text" id="reward-three" name="reward-three" />
-        <label for="goal"> Date Started: </label>
-        <input type="date" id="date-started" name="date-started" />
+        <label for="goal"> &ensp; New Goal:</label>
+        <input type="text" id="new_habit" name="new_habit" />
+        <label for="goal"> &ensp; Your "why": </label>
+        <input type="text" id="reason_why" name="reason_why" />
+        <label for="goal"> &ensp; Reward One: </label>
+        <input type="text" id="reward_one" name="reward_one" />
+        <label for="goal"> &ensp; Reward Two: </label>
+        <input type="text" id="reward_two" name="reward_two" />
+        <label for="goal"> &ensp; Reward Three: </label>
+        <input type="text" id="reward_three" name="reward_three" />
+        <label for="goal"> &ensp; Date Started: </label>
+        <input type="date" id="date_started" name="date_started" />
+        <button type="submit" class="waves-effect waves-light btn purple accent-4">Add New Goal</button>
       </form>
     </div>
-    <div class="item3">
-      <p>Goal Here</p>
-      <p>
-        <label>
-          <input type="checkbox" />
-          <span></span>
-        </label>
-      </p>
+    <div class="item3 ">
+      <!-- Goals here -->
+      <ul id="goal-list" class="newGoals">
+      
+        <!-- Setting up checkmarks in right place, figure out why this goes above ul-->
+      
+        
+      </ul>
     </div>
-    <div class="item4">
-      <p>This is an example of where the tracker would be for goal 2</p>
+    
+
     </div>
-  </div>
 
 
 

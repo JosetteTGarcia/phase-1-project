@@ -1,0 +1,50 @@
+
+
+    
+    
+    .item1 { 
+      grid-area: header;
+      text-align: left; 
+     }
+    .item2 { 
+      grid-area: form;
+      text-align: left;
+      width: 300px;
+    }
+    .item3 { 
+      grid-area: first;
+      text-align: justify;  
+    }
+    .item4 { 
+      grid-area: second; 
+      text-align: left; 
+    }
+
+    
+    
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        'header header header header header header'
+        'form first first first first first'
+        'form second second second second second';
+      gap: 10px;
+      background-color: #ce93d8;
+      padding: 10px;
+    }
+    
+    .grid-container > div {
+      background-color: #ffffff;
+      padding: 20px 0;
+      font-size: 15px;
+      border: 2px solid rgb(58, 0, 194);
+    }
+    
+    label {
+      display: inline-block;
+    }
+
+    .newGoal {
+      border: 2px solid #e0e0e0;
+    }
+  

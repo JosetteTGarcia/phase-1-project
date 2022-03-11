@@ -2,21 +2,12 @@
   "goals": [
     {
       "id": 1,
-      "goalName": "Wake up every morning at 5:30 AM",
-      "reasonWhy": "I want to start my day off right with exercise, a healthy breakfast, and studying so I can set myself up for a successful day",
-      "rewardOne": "Pizza on a Friday night",
-      "rewardTwo": "One purchase for Amazon",
-      "rewardThree": "A night out!",
-      "dateStarted": " 3/8/22"
-    },
-    {
-      "goalName": "hello",
-      "reasonWhy": "It gets my day started off right and I have the motivation to eat healthy the rest of the day.",
-      "rewardOne": "yes",
-      "rewardTwo": "Amazon purchase",
-      "rewardThree": "New swimsuit",
-      "dateStarted": "2022-03-10",
-      "id": 2
+      "goalName": "Wake up at 5:30 AM every day",
+      "reasonWhy": "I want to study in the morning so I can get through this program faster",
+      "rewardOne": "Amazon purchase",
+      "rewardTwo": "Can purchase Amazon gift",
+      "rewardThree": "Another Amazon purchase",
+      "dateStarted": "2022-03-24"
     }
   ]
 }

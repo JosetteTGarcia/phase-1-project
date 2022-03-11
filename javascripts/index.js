@@ -21,7 +21,22 @@ const checkboxContainer = document.createDocumentFragment();
 //Home Page
 const homePageTemplate = () => { 
   return `
+  <div class="item1">
   <h3 class="center-align">Welcome to the First Step Towards Your Goals!</h3>
+  <p class="left-align">
+    <h5 class = "deep-purple-text text-darken-4">
+      <b> &ensp; Directions:</b>
+      </h5>
+    <ol>
+      <li>Submit your goal in the form</li>
+      <li>Make sure to clarify your "why" and add the rewards you're setting for yourself</li>
+      <li>See your goal tracker appear to the right!</li>
+      <li>Make sure to come back each day to check off if you have completed the day</li>
+      <li>Don't beat yourself up for missing a day, just continue to improve each cycle.</li>
+      <li>Start with small goals and make your next 30 days even bigger!</li>
+    </ol>
+  </p>
+</div>
   
   `
 }
@@ -112,18 +127,25 @@ function renderNewGoal(goalObject) {
   // step 2. use innerHTML to create all of its children
   newGoal.innerHTML = `
   <div class="goal-content">
-    <h6>${goalObject.goalName}</h6>
+    <h5 class="deep-purple-text text-darken-4">
+    <b>
+    &ensp; ${goalObject.goalName}
+    </b>
+    </h5>
     <p>
-      ${goalObject.reasonWhy}
+      <ol>
+      <b> Your Reson Why: </b> ${goalObject.reasonWhy}
+      </ol>
     </p>
     <p>
-     Date Started: ${goalObject.dateStarted}
+      <ol>
+     <b>Date Started: </b> ${goalObject.dateStarted} <br> 
+     <b>Reward One: </b>  ${goalObject.rewardOne}<br> 
+     <b>Reward One: </b> ${goalObject.rewardTwo}<br> 
+    <b>Reward One: </b> ${goalObject.rewardThree}<br> 
+     </ol>
     </p>
-    <p>
-          <li>Reward One: ${goalObject.rewardOne}</li>
-          <li>Reward One: ${goalObject.rewardTwo}</li>
-          <li>Reward One: ${goalObject.rewardThree}</li>
-    </p>
+    
     </div>
   </div>
   <div id ="checkboxdiv" style = "display:inline" >
@@ -222,6 +244,7 @@ function initialize(){
 /** WHEN THE DOM LOADS */
  document.addEventListener('DOMContentLoaded', () => {
   initialize();
+  renderHomePage();
   homePageLinkEvent();
   habitTipsLinkEvent();
  })
