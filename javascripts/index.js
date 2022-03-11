@@ -44,7 +44,11 @@ const homePageTemplate = () => {
 //Habits Tips page
 const habitTipsTemplate = () => {
   return `
-  <h3 class="center-align">Check out these tips to stay on track!</h3>
+  <div class="center-align">
+  <h3> Atomic habits (by James Clear)</h3>
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/PZ7lDrwYdZc " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
   `
 }
 
