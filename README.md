@@ -1,18 +1,26 @@
 
 
-# Habit Tracker
+## The Habit Tracker App
 
-Foobar is a Python library for dealing with word pluralization.
+The first step to reaching your goals; one habit, one day, one reward at a time!
 
-## Installation
+## Project Philosophy
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+This project is inspired by Atomic Habits by James Clear. Clear's philosphy, as well as this projects, is to break down goals into smaller daily habits that when completed consistently, can allow individuals to reach larger accomplishments. 
 
-```bash
-pip install foobar
-```
+There are many tools that follow a "habit tracking" theory; tracking journals, calendars, and the fancier apps. This app makes it simple and starts with just 30 days and the three rerward the user promises themself. 
 
-## Usage
+
+## Features
+- Can submit their goals using the Goal Creation form
+    - Add your goal title 
+    - Add your "why"
+    - Set your rewards
+- App creates a Goal Card for the user and renders 30 checkboxes for 30 days of habit tracking
+- You can delete a goal when it no longer meets your needs
+- Navigate to the "Tips Video!" page to watch a summary of James Clear's Atomic Habits to motivate your progress
+
+## How to Use
 
 ```python
 import foobar
