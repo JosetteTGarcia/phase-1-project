@@ -29,7 +29,7 @@ const homePageTemplate = () => {
       <b> &ensp; Directions:</b>
       </h5>
     <ol>
-      <li>Submit your goal in the form</li>
+      <li>Submit your main goal and the habit you are going to track to get you there </li>
       <li>Make sure to clarify your "why" and add the rewards you're setting for yourself</li>
       <li>See your goal tracker appear to the right!</li>
       <li>Make sure to come back each day to check off if you have completed the day</li>

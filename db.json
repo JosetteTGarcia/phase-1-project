@@ -1,13 +1,14 @@
 {
   "goals": [
     {
-      "id": 3,
-      "goalName": "Build an interactive website to track your goals",
-      "reasonWhy": "I want to complete my phase 1 project and consider my own habit tracking goals at the same time.",
-      "rewardOne": "Pizza Fridays!",
-      "rewardTwo": "The feeling of accomplishment",
-      "rewardThree": "Get to move to Phase 2",
-      "dateStarted": "2022-03-05"
+      "id": 1,
+      "goalName": "Graduate from FlatIron School",
+      "dailyHabit": "Study & Practice 30 hours a week",
+      "reasonWhy": "I want to become a Software Engineer by the end of 2022",
+      "rewardOne": "Pizza Friday!",
+      "rewardTwo": "Beach Day",
+      "rewardThree": "Pamper Day ",
+      "dateStarted": "2022-03-11"
     }
   ]
 }
