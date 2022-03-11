@@ -37,8 +37,10 @@ const homePageTemplate = () => {
       <li>Start with small goals and make your next 30 days even bigger!</li>
     </ol>
   </p>
+  <div class="quote_button">
+  <button class = "quote" id ="quote">Click Me for Inspiration!</button>
+  </div>
 </div>
-  
   `
 }
 
@@ -208,10 +210,32 @@ function renderNewGoal(goalObject) {
 
 const renderHomePage = () => {
   mainDiv().innerHTML = homePageTemplate();
+  document.querySelector(`#quote`).addEventListener(`click`, () => {
+    getMotivation()
+  });
 }
 const renderHabitTipsPage = () => {
   mainDiv().innerHTML = habitTipsTemplate();
 }
+
+//FetchMotivation
+function getMotivation(){
+  fetch('https://quoteclear.web.app/api/random', {
+    method: 'GET',
+  })
+  .then(res=> res.json())
+  .then(res => alert(` ${res.text} - James Clear , ${res.source}`))
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
