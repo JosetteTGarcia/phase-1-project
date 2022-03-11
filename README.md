@@ -8,7 +8,7 @@
 
 This project is inspired by Atomic Habits by [James Clear](https://jamesclear.com/). Clear's philosphy, as well as this projects, is to break down goals into smaller daily habits that when completed consistently, can allow individuals to reach larger accomplishments. 
 
-There are many tools that follow a "habit tracking" theory; tracking journals, calendars, and the fancier apps. This app makes it simple and starts with just 30 days and the three rerward the user promises themself. 
+There are many tools that follow a "habit tracking" theory; tracking journals, calendars, and the fancier apps. This app makes it simple and starts with just 30 days and the three rerwards the user promises themself. Tracking your goal should be the least hardest thing about reaching them.
 
 
 ## Features
