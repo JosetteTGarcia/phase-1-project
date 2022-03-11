@@ -2,6 +2,7 @@
 
 /** Globals */
 const baseUrl = 'http://localhost:3000';
+//Eventlistener One
 document
   .querySelector("#goal-add-form")
   .addEventListener("submit", handleFormSubmit);
@@ -18,7 +19,7 @@ const checkboxContainer = document.createDocumentFragment();
 
 /** Templates */
 
-//Home Page
+//Home Page w/ Directions
 const homePageTemplate = () => { 
   return `
   <div class="item1">
@@ -41,7 +42,7 @@ const homePageTemplate = () => {
   `
 }
 
-//Habits Tips page
+//Habits Tips w/video
 const habitTipsTemplate = () => {
   return `
   <div class="center-align">
@@ -54,19 +55,13 @@ const habitTipsTemplate = () => {
 
 /**Events: */
 
-// Form Submission/ Create Object
-
+// Form Submission/ Create Object - Gets called by Event Listener on Form
 
 function handleFormSubmit(event) {
   //prevent default
   event.preventDefault();
 
-  //setting selector so it's available within function
-  const array1 = [];
-  const finalCheckboxArray = [];
-
   
-
   // Step 1: get user input from the form input fields
   const goalObject = {
     id: "",
@@ -78,9 +73,7 @@ function handleFormSubmit(event) {
     dateStarted: event.target.date_started.value,
   }
       
-  
 
-  // TODO: create animal on the server
 
  // Step 2: slap it on the DOM
 renderNewGoal(goalObject);
@@ -94,9 +87,8 @@ event.target.reset();
 
 
 
-
-
- //Navigate to Home Page when you click Habit Tracker: Reach Your...
+ //Navigate back to Home Page when you click Habit Tracker: Reach Your...
+ //Event Listener Two
  const homePageLinkEvent = () => {
   homePageLink().addEventListener('click', (e) => 
   {
@@ -105,7 +97,8 @@ event.target.reset();
    })
  }
 
- //Navigate to habit tips when you click "Habit Tips"
+ //Navigate to habit video  when you click "Video tips"
+ //Event Listener Three
  const habitTipsLinkEvent = () => {
   habitTipsLink().addEventListener('click', (e) => 
   {
@@ -117,9 +110,6 @@ event.target.reset();
 
 
 /** Renders */
-
-
-
 
 
 function renderNewGoal(goalObject) {
@@ -145,14 +135,14 @@ function renderNewGoal(goalObject) {
       <ol>
      <b>Date Started: </b> ${goalObject.dateStarted} <br> 
      <b>Reward One: </b>  ${goalObject.rewardOne}<br> 
-     <b>Reward One: </b> ${goalObject.rewardTwo}<br> 
-    <b>Reward One: </b> ${goalObject.rewardThree}<br> 
+     <b>Reward Two: </b> ${goalObject.rewardTwo}<br> 
+    <b>Reward Three: </b> ${goalObject.rewardThree}<br> 
      </ol>
     </p>
     
     </div>
   </div>
-  <div id ="checkboxdiv" style = "display:inline" >
+  <div id ="checkboxdiv" class = "checkboxdiv" style = "display:inline" >
 
   </div>
   <div class="buttons">
@@ -160,23 +150,36 @@ function renderNewGoal(goalObject) {
   </div>
   `
   
-  //Event Listener for delete button
+  //Event Listener FOUR 
+  //Listens to Delete Button
   newGoal.querySelector(`#delete`).addEventListener(`click`, () => {
     newGoal.remove()
     deleteGoal(goalObject.id)
   });
 
+  //For Loop that creates 30 checkboxes for 30 days
   for (let i = 1; i < 31; i++) {  
     let checkboxes = checkboxContainer.appendChild(document.createElement("li"));
-    checkboxes.style = "display:inline"
-    checkboxes.className = "checkboxes"
+    checkboxes.style = "display:inline";
+    checkboxes.className = "checkboxes";
+    checkboxes.innerHTML = "";
+    if (i == 10|| i == 20 || i == 30) {
+    checkboxes.innerHTML = `
+    <label>
+      <input type="checkbox" id = "checkbox" />  
+      <span> </span>
+      <text> ${i} Days completed! Collect a reward! </text>
+      </label>
+    <br>
+    ` 
+    } else {
     checkboxes.innerHTML = `
     <label>
       <input type="checkbox" id = "checkbox" />
-      <span> Day ${i}</span> &nbsp;
+      <span> </span> &nbsp;
     </label>
     ` 
-    ; 
+    }
   };
 
 
