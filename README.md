@@ -2,7 +2,7 @@
 
 ## The Habit Tracker App
 
-The first step to reaching your goals; one habit, one day, one reward at a time!
+>The first step to reaching your goals; one habit, one day, one reward at a time!
 
 ## Project Philosophy
 
