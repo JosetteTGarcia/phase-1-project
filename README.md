@@ -17,8 +17,10 @@ There are many tools that follow a "habit tracking" theory; tracking journals, c
     - Add your "why"
     - Set your rewards
 - App creates a Goal Card for the user and renders 30 checkboxes for 30 days of habit tracking
-- You can delete a goal when it no longer meets your needs
+- Ability to delete a goal when it no longer meets your needs
+- Can receive a random quoute from [James Clear Quotes API](https://quoteclear.web.app/) 
 - Navigate to the `Tips Video!` page to watch a summary of James Clear's Atomic Habits to motivate your progress
+- 
 
 ## How to Use
 
@@ -31,6 +33,7 @@ There are many tools that follow a "habit tracking" theory; tracking journals, c
 3. Check off the daily boxes until you have reached 30 days.
 4. Click the `Delete Goal` button when you no longer want to track your goal
 5. Vist the `Video Tips!` page to watch the added youtube video
+6. Click the `Click Me for Motivation` to receive a pop up with a random quote from James Clear
 
 
 ## Technologies Used
@@ -39,6 +42,7 @@ This web app was made using:
 - [Materialize](https://materializecss.com/) ( a CSS Framework)
 - HTML
 - Javascript 
+-[James Clear Quotes API](https://quoteclear.web.app/) 
 - Local JSON server
 
 **Note**: This app is an SPA (single page application)
