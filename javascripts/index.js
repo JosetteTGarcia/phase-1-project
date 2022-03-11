@@ -65,7 +65,8 @@ function handleFormSubmit(event) {
   // Step 1: get user input from the form input fields
   const goalObject = {
     id: "",
-    goalName: event.target.new_habit.value,
+    goalName: event.target.new_goal.value,
+    dailyHabit: event.target.new_habit.value,
     reasonWhy: event.target.reason_why.value,
     rewardOne: event.target.reward_one.value,
     rewardTwo: event.target.reward_two.value,
@@ -126,6 +127,11 @@ function renderNewGoal(goalObject) {
     &ensp; ${goalObject.goalName}
     </b>
     </h5>
+    <h6 class="indigo-text text-darken-4">
+    <b>
+    &ensp; &ensp; Your daily Habit: </b> ${goalObject.dailyHabit}
+    </b>
+    </h6>
     <p>
       <ol>
       <b> Your Reson Why: </b> ${goalObject.reasonWhy}
