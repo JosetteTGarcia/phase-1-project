@@ -1,13 +1,13 @@
 {
   "goals": [
     {
-      "id": 1,
-      "goalName": "Wake up at 5:30 AM every day",
-      "reasonWhy": "I want to study in the morning so I can get through this program faster",
-      "rewardOne": "Amazon purchase",
-      "rewardTwo": "Can purchase Amazon gift",
-      "rewardThree": "Another Amazon purchase",
-      "dateStarted": "2022-03-24"
+      "id": 3,
+      "goalName": "Build an interactive website to track your goals",
+      "reasonWhy": "I want to complete my phase 1 project and consider my own habit tracking goals at the same time.",
+      "rewardOne": "Pizza Fridays!",
+      "rewardTwo": "The feeling of accomplishment",
+      "rewardThree": "Get to move to Phase 2",
+      "dateStarted": "2022-03-05"
     }
   ]
 }
