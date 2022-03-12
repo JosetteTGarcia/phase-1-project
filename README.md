@@ -31,9 +31,14 @@ There are many tools that follow a "habit tracking" theory; tracking journals, c
 2. Click the `Add New Goal` button when you have completed these fields and watch your new Goal Card render to the right
   > ![image](./gifs/SubmitForm.gif)
 3. Check off the daily boxes until you have reached 30 days.
+> ![image](./gifs/ClickBoxes.gif)
 4. Click the `Delete Goal` button when you no longer want to track your goal
+> ![image](./gifs/DeleteGoal.gif)
 5. Vist the `Video Tips!` page to watch the added youtube video
-6. Click the `Click Me for Motivation` button to receive a pop up with a random quote from James Clear
+> ![image](./gifs/TipsVideo.gif)
+6. Click the `Click Me for Motivation` button to receive a pop up with a random 
+quote from James Clear
+> ![image](./gifs/GetQuote.gif)
 
 
 ## Technologies Used
