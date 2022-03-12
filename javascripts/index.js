@@ -38,7 +38,7 @@ const homePageTemplate = () => {
     </ol>
   </p>
   <div class="quote_button">
-  <button class = "quote" id ="quote">Click Me for Inspiration!</button>
+  <button class = "quote" id ="quote">Click Me for Motivation!</button>
   </div>
 </div>
   `
@@ -50,7 +50,7 @@ const habitTipsTemplate = () => {
   <div class="center-align">
   <h3> Atomic habits (by James Clear)</h3>
 
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/PZ7lDrwYdZc " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/PZ7lDrwYdZc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   `
 }
