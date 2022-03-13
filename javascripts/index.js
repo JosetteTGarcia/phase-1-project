@@ -62,8 +62,6 @@ const habitTipsTemplate = () => {
 function handleFormSubmit(event) {
   //prevent default
   event.preventDefault();
-
-  
   // Step 1: get user input from the form input fields
   const goalObject = {
     id: "",
@@ -75,18 +73,15 @@ function handleFormSubmit(event) {
     rewardThree: event.target.reward_three.value,
     dateStarted: event.target.date_started.value,
   }
-      
-
-
  // Step 2: slap it on the DOM
 renderNewGoal(goalObject);
-
-//add to  db.json?
+//add to object to serve
 saveGoalToServer(goalObject)
-
-// (optional) Step 3: clear the input fields
+// Step 3: clear the input fields
 event.target.reset();
 }
+
+
 
 
 
@@ -120,7 +115,6 @@ function renderNewGoal(goalObject) {
   const newGoal = document.createElement("li");
   newGoal.className = "newGoal";
   newGoal.id = goalObject.id
- 
   // step 2. use innerHTML to create all of its children
   newGoal.innerHTML = `
   <div class="goal-content">
@@ -157,7 +151,6 @@ function renderNewGoal(goalObject) {
   <button class = "delete" id ="delete" data-action="delete">Delete Goal</button>
   </div>
   `
-  
   //Event Listener FOUR 
   //Listens to Delete Button
   newGoal.querySelector(`#delete`).addEventListener(`click`, () => {
@@ -189,20 +182,11 @@ function renderNewGoal(goalObject) {
     ` 
     }
   };
-
-
   // step 3. slap it on the DOM!
   document.querySelector("#goal-list").append(newGoal);
   newGoal.querySelector("#checkboxdiv").appendChild(checkboxContainer);
 
 }
-
-
-
-// const appendNewTask = item => {
-//   console.log("hello");
-//   document.getElementsByClassName(".newGoal").appendChild(item);
-// };
 
 
 
@@ -226,17 +210,6 @@ function getMotivation(){
   .then(res=> res.json())
   .then(res => alert(` ${res.text} - James Clear , ${res.source}`))
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 //Fetch Goals on reload

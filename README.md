@@ -6,9 +6,9 @@
 
 ## App Philosophy
 
-This app is inspired by Atomic Habits by [James Clear](https://jamesclear.com/). Clear's philosphy, as well as this app's, is to break down goals into smaller daily habits that when completed consistently, can allow individuals to reach larger accomplishments. 
+This app is inspired by Atomic Habits by [James Clear](https://jamesclear.com/). Clear's philosophy, as well as this app's, is to break down goals into smaller daily habits that when completed consistently, can allow individuals to reach larger accomplishments. 
 
-There are many tools that follow a "habit tracking" theory; tracking journals, calendars, and the fancier apps. This app makes it simple and starts with just 30 days and the three rerwards the user promises themself. Tracking your goals should be the least hardest thing about reaching them.
+There are many tools that follow a "habit tracking" theory; tracking journals, calendars, and the fancier apps. This app makes it simple and starts with just 30 days and the three rewards the user promises themself. Tracking your goals should be the least hardest thing about reaching them.
 
 
 ## Features
