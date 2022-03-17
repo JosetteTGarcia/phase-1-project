@@ -1,3 +1,14 @@
 {
-  "goals": []
+  "goals": [
+    {
+      "id": 1,
+      "goalName": "Graduate from FlatIron School",
+      "dailyHabit": "Wake up at 5:30 AM every day",
+      "reasonWhy": "I want to study in the morning so I can get through this program faster",
+      "rewardOne": "Amazon purchase",
+      "rewardTwo": "Can purchase Amazon gift",
+      "rewardThree": "New swimsuit",
+      "dateStarted": "2022-03-17"
+    }
+  ]
 }
