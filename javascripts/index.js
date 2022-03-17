@@ -40,9 +40,6 @@ const homePageTemplate = () => {
   <div class="quote_button">
   <button class = "quote" id ="quote">Click Me for Motivation!</button>
   </div>
-  <div id = counter>
-  <p> 1</p>
-  </div>
 </div>
   `
 }
@@ -190,8 +187,6 @@ function renderNewGoal(goalObject) {
   newGoal.querySelector("#checkboxdiv").appendChild(checkboxContainer);
 
 }
-
-
 
 
 
